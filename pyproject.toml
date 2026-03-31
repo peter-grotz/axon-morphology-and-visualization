@@ -1,0 +1,8 @@
+[project]
+name = "lc-685221-visualization-walkthrough"
+version = "0.1.0"
+description = "Notebook walkthrough for CCF rendering, MIPs, carveouts, PCA, and UMAP in specimen 685221."
+requires-python = ">=3.9"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
