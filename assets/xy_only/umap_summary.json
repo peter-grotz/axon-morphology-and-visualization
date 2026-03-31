@@ -1,0 +1,8 @@
+{
+  "features_full_csv": "/Users/peter.grotz/Documents/LC-images/685221/analysis/balanced_carveouts_120_combined_xy_only/masked_neurite_xy_only_features_full.csv",
+  "features_zscore_csv": "/Users/peter.grotz/Documents/LC-images/685221/analysis/balanced_carveouts_120_combined_xy_only/masked_neurite_xy_only_features_zscore.csv",
+  "samples": 120,
+  "n_neighbors": 15,
+  "min_dist": 0.2,
+  "random_state": 42
+}
