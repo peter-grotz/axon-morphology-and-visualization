@@ -1,4 +1,4 @@
-# 685221 Visualization Walkthrough
+# Whole Brain Reconstruction Visualization Walkthrough
 
 This repo is a clean notebook-first walkthrough for the current `685221` analysis outputs.
 
