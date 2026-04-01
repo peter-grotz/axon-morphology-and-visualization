@@ -4,10 +4,10 @@ This repo is a clean notebook-first walkthrough for the current `685221` analysi
 
 It covers:
 
-- the latest sagittal 3D CCF render
+- sagittal 3D CCF render
 - CCF renders with aligned SWC reconstructions inside the atlas
-- exact-coordinate level-0 XY MIPs
-- automated local carveouts and SWC-derived masks
+- exact-coordinate level-0 XY MIPs of multi-resolution Ome-Zarr imaging data
+- automated local image carveouts and SWC-derived masks
 - XY-only PCA and UMAP
 - morphology-only PCA and UMAP
 
