@@ -3,6 +3,20 @@ name = "lc-685221-visualization-walkthrough"
 version = "0.1.0"
 description = "Notebook walkthrough for CCF rendering, MIPs, carveouts, PCA, and UMAP in specimen 685221."
 requires-python = ">=3.9"
+dependencies = [
+    "jupyter",
+    "matplotlib",
+    "nibabel",
+    "numpy",
+    "pandas",
+    "pillow",
+    "pynrrd",
+    "scikit-image",
+    "vtk",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+
+[project.scripts]
+project-swc-ccf-views = "lc_walkthrough.swc_projection:main"

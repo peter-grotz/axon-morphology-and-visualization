@@ -1,6 +1,9 @@
 jupyter
 matplotlib
+nibabel
 numpy
 pandas
 pillow
-
+pynrrd
+scikit-image
+vtk

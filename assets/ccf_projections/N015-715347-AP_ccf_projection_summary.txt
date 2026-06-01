@@ -1,0 +1,8 @@
+source_swc: examples/swcs/N015-715347-AP.swc
+node_count: 9570
+soma_xyz_um: [6677.942002, 4016.37443, 5864.349796]
+xyz_min_um: [2028.317438, 3450.268632, 5616.022673]
+xyz_max_um: [9108.118616, 6229.558345, 10643.789964]
+type_counts: {1: 1, 2: 8161, 3: 1408}
+ccf_extent_ap_dv_ml_um: [13200.0, 8000.0, 11400.0]
+coordinate_assumption: SWC x/y/z are Allen CCF AP/DV/ML in microns.
