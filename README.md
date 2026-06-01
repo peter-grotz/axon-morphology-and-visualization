@@ -27,25 +27,25 @@ Generate the 3D glass CCF views with the example SWC and the Gracile nucleus hig
 
 ```bash
 python scripts/render_ccf_glass_multiview.py \
-  --swc-path examples/swcs/N015-715347-AP.swc \
+  --swc-path examples/swcs/N020-715347-SP.swc \
   --output-dir assets/ccf_glass_gracile \
-  --prefix N015-715347-AP
+  --prefix N020-715347-SP
 ```
 
 Generate flat coronal, sagittal, and horizontal projection panels from the same SWC:
 
 ```bash
 python scripts/project_swc_ccf_views.py \
-  examples/swcs/N015-715347-AP.swc \
+  examples/swcs/N020-715347-SP.swc \
   --out-dir assets/ccf_projections \
-  --prefix N015-715347-AP
+  --prefix N020-715347-SP
 ```
 
 The bundled renderer uses:
 
 - `assets/ccf_meshes/annotation_10_nrrd_root_ds4.vtp`: a downsampled full-brain CCF shell for GitHub-friendly reruns.
 - `assets/ccf_meshes/gracile_nucleus_1039_25um.vtp`: cached Gracile nucleus mesh from Allen CCF label `1039`.
-- `examples/swcs/N015-715347-AP.swc`: example neuron in CCF AP/DV/ML micron coordinates.
+- `examples/swcs/N020-715347-SP.swc`: example neuron in CCF AP/DV/ML micron coordinates.
 
 For publication-quality local renders, pass a higher-resolution CCF root mesh with `--root-mesh`, for example a locally cached `annotation_10_nrrd_root.vtp`.
 
@@ -63,19 +63,19 @@ CCF with aligned reconstructions overlaid:
 
 ![CCF with N047](assets/ccf/ccf_sagittal_3d_white_glass_fullbrain_4k_with_N047.png)
 
-### N015-715347-AP With Gracile Nucleus
+### N020-715347-SP With Gracile Nucleus
 
 Sagittal glass CCF render:
 
-![N015 sagittal glass CCF with Gracile nucleus](assets/ccf_glass_gracile/N015-715347-AP_ccf_glass_sagittal_with_gracile_nucleus.png)
+![N020 sagittal glass CCF with Gracile nucleus](assets/ccf_glass_gracile/N020-715347-SP_ccf_glass_sagittal_with_gracile_nucleus.png)
 
 Coronal glass CCF render:
 
-![N015 coronal glass CCF with Gracile nucleus](assets/ccf_glass_gracile/N015-715347-AP_ccf_glass_coronal_with_gracile_nucleus.png)
+![N020 coronal glass CCF with Gracile nucleus](assets/ccf_glass_gracile/N020-715347-SP_ccf_glass_coronal_with_gracile_nucleus.png)
 
 Horizontal glass CCF render:
 
-![N015 horizontal glass CCF with Gracile nucleus](assets/ccf_glass_gracile/N015-715347-AP_ccf_glass_horizontal_with_gracile_nucleus.png)
+![N020 horizontal glass CCF with Gracile nucleus](assets/ccf_glass_gracile/N020-715347-SP_ccf_glass_horizontal_with_gracile_nucleus.png)
 
 ### Mask QC
 

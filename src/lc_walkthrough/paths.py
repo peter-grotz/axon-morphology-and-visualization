@@ -12,15 +12,15 @@ PATHS = {
     "latest_ccf_render": ASSETS_ROOT / "ccf" / "ccf_sagittal_3d_white_glass_fullbrain_4k_dimmer_moretranslucent.png",
     "ccf_overlay_n053": ASSETS_ROOT / "ccf" / "ccf_sagittal_3d_white_glass_fullbrain_4k_with_N053.png",
     "ccf_overlay_n047": ASSETS_ROOT / "ccf" / "ccf_sagittal_3d_white_glass_fullbrain_4k_with_N047.png",
-    "n015_gracile_glass_sagittal": ASSETS_ROOT
+    "n020_gracile_glass_sagittal": ASSETS_ROOT
     / "ccf_glass_gracile"
-    / "N015-715347-AP_ccf_glass_sagittal_with_gracile_nucleus.png",
-    "n015_gracile_glass_coronal": ASSETS_ROOT
+    / "N020-715347-SP_ccf_glass_sagittal_with_gracile_nucleus.png",
+    "n020_gracile_glass_coronal": ASSETS_ROOT
     / "ccf_glass_gracile"
-    / "N015-715347-AP_ccf_glass_coronal_with_gracile_nucleus.png",
-    "n015_gracile_glass_horizontal": ASSETS_ROOT
+    / "N020-715347-SP_ccf_glass_coronal_with_gracile_nucleus.png",
+    "n020_gracile_glass_horizontal": ASSETS_ROOT
     / "ccf_glass_gracile"
-    / "N015-715347-AP_ccf_glass_horizontal_with_gracile_nucleus.png",
+    / "N020-715347-SP_ccf_glass_horizontal_with_gracile_nucleus.png",
     "render_script": WORKSPACE_ROOT / "scripts" / "render_ccf_sagittal_3d.py",
     "render_multiview_script": REPO_ROOT / "scripts" / "render_ccf_glass_multiview.py",
     "swc_projection_script": REPO_ROOT / "scripts" / "project_swc_ccf_views.py",

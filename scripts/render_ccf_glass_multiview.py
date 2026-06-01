@@ -204,6 +204,29 @@ def swc_segments(path: Path) -> list[tuple[tuple[float, float, float], tuple[flo
     return segments
 
 
+def swc_bounds(path: Path) -> tuple[float, float, float, float, float, float]:
+    points = []
+    for p0, p1 in swc_segments(path):
+        points.extend([p0, p1])
+    if not points:
+        raise ValueError(f"No SWC segments found in {path}")
+    array = np.asarray(points, dtype=float)
+    mins = array.min(axis=0)
+    maxs = array.max(axis=0)
+    return (mins[0], maxs[0], mins[1], maxs[1], mins[2], maxs[2])
+
+
+def union_bounds(*bounds_list: tuple[float, float, float, float, float, float]) -> tuple[float, float, float, float, float, float]:
+    return (
+        min(bounds[0] for bounds in bounds_list),
+        max(bounds[1] for bounds in bounds_list),
+        min(bounds[2] for bounds in bounds_list),
+        max(bounds[3] for bounds in bounds_list),
+        min(bounds[4] for bounds in bounds_list),
+        max(bounds[5] for bounds in bounds_list),
+    )
+
+
 def make_swc_actor(path: Path, color: tuple[float, float, float], opacity: float, tube_radius: float, mode: str, stride: int) -> vtk.vtkActor:
     vtk_points = vtk.vtkPoints()
     lines = vtk.vtkCellArray()
@@ -350,12 +373,18 @@ def add_scalebar(path: Path, bar_mm: float, pixels_per_um: float, background: st
 
 def render_view(args: argparse.Namespace, view: str, root_poly: vtk.vtkPolyData, region_poly: vtk.vtkPolyData, output_path: Path) -> None:
     view_root_poly = root_poly
-    bounds = view_root_poly.GetBounds()
-    center = (0.5 * (bounds[0] + bounds[1]), 0.5 * (bounds[2] + bounds[3]), 0.5 * (bounds[4] + bounds[5]))
+    root_bounds = view_root_poly.GetBounds()
+    center = (
+        0.5 * (root_bounds[0] + root_bounds[1]),
+        0.5 * (root_bounds[2] + root_bounds[3]),
+        0.5 * (root_bounds[4] + root_bounds[5]),
+    )
     if args.hemisphere == "closest":
         view_root_poly = clip_closest_half(root_poly, center, view)
-        bounds = view_root_poly.GetBounds()
-        center = (0.5 * (bounds[0] + bounds[1]), 0.5 * (bounds[2] + bounds[3]), 0.5 * (bounds[4] + bounds[5]))
+        root_bounds = view_root_poly.GetBounds()
+
+    bounds = union_bounds(root_bounds, region_poly.GetBounds(), swc_bounds(Path(args.swc_path)))
+    center = (0.5 * (bounds[0] + bounds[1]), 0.5 * (bounds[2] + bounds[3]), 0.5 * (bounds[4] + bounds[5]))
 
     x_span = bounds[1] - bounds[0]
     y_span = bounds[3] - bounds[2]
